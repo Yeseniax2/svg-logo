@@ -10,3 +10,15 @@ fs.writeFile(fileNmae,svg, ()=> Console.log('generatedlogo.svg'));
 }
 
 //questions that create logo using response
+function init() {
+    inquirer
+    .prompt(questions)
+    .then((response)=> {
+        createLogo(response);
+        })
+        .catch(err => {
+            console.log(err)
+        });
+}
+
+init();
